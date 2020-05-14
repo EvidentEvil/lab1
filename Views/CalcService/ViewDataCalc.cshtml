@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = @ViewData["calcTitle"];
+}
+
+<div>
+<h3>@ViewData["calcTitle"]</h3><br>
+
+    <div><strong>Value First: @ViewData["firstRnd"]</strong></div>
+    <div><strong>Rand Value Second: @ViewData["secondRnd"]</strong></div>
+
+    <div><strong>Add: </strong></div>
+    <div>
+        @ViewData["firstRnd"] + @ViewData["secondRnd"] = @ViewData["add"]
+    </div>
+
+    <div><strong>Sub: </strong></div>
+    <div>
+        @ViewData["firstRnd"] - @ViewData["secondRnd"] = @ViewData["sub"]
+    </div>
+
+    <div><strong>Mult: </strong></div>
+    <div>
+        @ViewData["firstRnd"] * @ViewData["secondRnd"] = @ViewData["mult"]
+    </div>
+
+    <div><strong>Div: </strong>
+    <div>
+        @ViewData["firstRnd"] / @ViewData["secondRnd"] = @ViewData["div"]
+    </div>
+
+</div>

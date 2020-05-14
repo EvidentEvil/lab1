@@ -1,0 +1,33 @@
+﻿@inject CalcService calcService;
+
+@{
+    ViewData["Title"] = @calcService.title;
+}
+
+<div>
+<h3>@calcService.title</h3><br>
+
+    <div><strong>Value First: @calcService.firstRnd</strong></div>
+    <div><strong>Rand Value Second: @calcService.secondRnd</strong></div>
+
+    <div><strong>Add: </strong></div>
+    <div>
+        @calcService.firstRnd + @calcService.secondRnd = @calcService.add()
+    </div>
+
+    <div><strong>Sub: </strong></div>
+    <div>
+        @calcService.firstRnd - @calcService.secondRnd = @calcService.sub()
+    </div>
+
+    <div><strong>Mult: </strong></div>
+    <div>
+        @calcService.firstRnd * @calcService.secondRnd = @calcService.mult()
+    </div>
+
+    <div><strong>Div: </strong>
+    <div>
+        @calcService.firstRnd / @calcService.secondRnd = @calcService.div()
+    </div>
+
+</div>

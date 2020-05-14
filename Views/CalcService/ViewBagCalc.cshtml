@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = @ViewBag.calcTitle;
+}
+
+<div>
+<h3>@ViewBag.calcTitle</h3><br>
+
+    <div><strong>Value First: @ViewBag.firstRnd</strong></div>
+    <div><strong>Rand Value Second: @ViewBag.secondRnd</strong></div>
+
+    <div><strong>Add: </strong></div>
+    <div>
+        @ViewBag.firstRnd + @ViewBag.secondRnd = @ViewBag.add
+    </div>
+
+    <div><strong>Sub: </strong></div>
+    <div>
+        @ViewBag.firstRnd - @ViewBag.secondRnd = @ViewBag.sub
+    </div>
+
+    <div><strong>Mult: </strong></div>
+    <div>
+        @ViewBag.firstRnd * @ViewBag.secondRnd = @ViewBag.mult
+    </div>
+
+    <div><strong>Div: </strong>
+    <div>
+        @ViewBag.firstRnd / @ViewBag.secondRnd = @ViewBag.div
+    </div>
+
+</div>
