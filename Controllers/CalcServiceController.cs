@@ -11,6 +11,33 @@ namespace Backend1.Controllers
 {
     public class CalcServiceController : Controller
     {
+        protected int firstRnd;
+        protected int secondRnd;
+        protected int add;
+        protected int sub;
+        protected int mult;
+        protected int div;
+
+        protected void setVariables()
+        {
+            var rnd = new Random();
+            this.firstRnd = rnd.Next(0, 10);
+            this.secondRnd = rnd.Next(0, 10);
+            this.add = firstRnd + secondRnd;
+            this.sub = firstRnd - secondRnd;
+            this.mult = firstRnd * secondRnd;
+
+            try
+            {
+                int div = firstRnd / secondRnd;
+                ViewData["div"] = div;
+            }
+            catch (DivideByZeroException)
+            {
+                ViewData["div"] = "error";
+            }
+        }
+
         private readonly ILogger<CalcServiceController> lgr;
 
         public CalcServiceController(ILogger<CalcServiceController> logger)
@@ -23,24 +50,13 @@ namespace Backend1.Controllers
             return View();
         }
 
+        //protected 
+
         public IActionResult PassUsingViewData()
         {
             ViewData["calcTitle"] = "PassUsingViewData";
 
-            var rnd = new Random();
-            int firstRnd = rnd.Next(0, 10);
-            int secondRnd = rnd.Next(0, 10);
-            int add = firstRnd + secondRnd;
-            int sub = firstRnd - secondRnd;
-            int mult = firstRnd * secondRnd;
-
-            try {
-                int div = firstRnd / secondRnd;
-                ViewData["div"] = div;
-            }
-            catch (DivideByZeroException) {
-                ViewData["div"] = "error";
-            }
+            this.setVariables();
 
             ViewData["firstRnd"] = firstRnd;
             ViewData["secondRnd"] = secondRnd;
@@ -55,20 +71,7 @@ namespace Backend1.Controllers
         {
             ViewBag.calcTitle = "PassUsingViewBag";
 
-            var rnd = new Random();
-            int firstRnd = rnd.Next(0, 10);
-            int secondRnd = rnd.Next(0, 10);
-            int add = firstRnd + secondRnd;
-            int sub = firstRnd - secondRnd;
-            int mult = firstRnd * secondRnd;
-
-            try {
-                int div = firstRnd / secondRnd;
-                ViewBag.div = div;
-            }
-            catch (DivideByZeroException) {
-                ViewBag.div = "error";
-            }
+            this.setVariables();
 
             ViewBag.firstRnd = firstRnd;
             ViewBag.secondRnd = secondRnd;
