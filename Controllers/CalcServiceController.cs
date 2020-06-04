@@ -49,9 +49,7 @@ namespace Backend1.Controllers
         {
             return View();
         }
-
-        //protected 
-
+        
         public IActionResult PassUsingViewData()
         {
             ViewData["calcTitle"] = "PassUsingViewData";
